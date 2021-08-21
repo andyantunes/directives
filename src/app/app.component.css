@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .input-wrapper .input-description {
   margin-bottom: 0;
 }
@@ -11,10 +17,11 @@
 .form {
   margin-top: 2rem;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .form-field {
-  width: 100%;
+  width: 270px;
 }
