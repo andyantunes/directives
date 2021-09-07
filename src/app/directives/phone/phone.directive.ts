@@ -1,8 +1,9 @@
 import { Directive, ElementRef, HostBinding, HostListener, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { throwError } from 'rxjs';
+import { PhoneOptions } from './phone.model';
 
-const DEFAULT_OPTIONS = {
+const DEFAULT_OPTIONS: PhoneOptions = {
   cellphone: false,
   landline: false,
 };
@@ -21,6 +22,9 @@ export class PhoneDirective implements ControlValueAccessor, OnInit {
   @Input('phone')
   public options: any = {};
 
+  @Input('errColor')
+  public errColor: string = '#f00';
+
   @HostBinding('cellphone')
   public cellphone: boolean = false;
 
@@ -29,9 +33,6 @@ export class PhoneDirective implements ControlValueAccessor, OnInit {
 
   private onTouched: any;
   private onChange: any;
-
-  private phoneRegex = /^([\d]{2})\ ?([\d]{4})\-?([\d]{4})/;
-  phone: string = '';
 
   private mask = '';
   private len = 0;
@@ -44,6 +45,11 @@ export class PhoneDirective implements ControlValueAccessor, OnInit {
     this.landline = this.options.landline;
   }
 
+  /**
+   * Get keyup event of input
+   *
+   * @param {any} $event Keyup event on input
+   */
   @HostListener('keyup', ['$event']) public onKeyUp($event: any): void {
     $event.stopPropagation();
     const value = $event.target.value;
@@ -51,6 +57,13 @@ export class PhoneDirective implements ControlValueAccessor, OnInit {
 
     let b = this.formatInput(a, this.mask, this.len);
     this.writeValue(b);
+  }
+
+  @HostListener('blur', ['$event']) public onBlur($event: any): void {
+    const value = $event.target.value;
+    let minLength = 14;
+    console.dir($event.target);
+    // this.el.nativeElement.style.border = `1px solid ${this.errColor}`;
   }
 
   /**

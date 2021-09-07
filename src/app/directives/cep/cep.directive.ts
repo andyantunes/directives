@@ -24,7 +24,7 @@ export class CepDirective implements ControlValueAccessor {
    *
    * @param $event any
    */
-  @HostListener('keyup', ['$event']) onKeyUp($event: any) {
+  @HostListener('input', ['$event']) onInput($event: any) {
     const value = $event.target.value;
     const formatted = value.replace(this.cepRegex, '$1-$2');
     const cepFormatted = formatted.substring(0, 9);
