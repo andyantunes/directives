@@ -12,9 +12,10 @@ import { CepDirective } from './directives/cep';
 import { PhoneDirective } from './directives/phone';
 import { EmailDirective } from './directives/email';
 import { NameDirective } from './directives/name/name.directive';
+import { PasswordDirective } from './directives/password/password.directive';
 
 @NgModule({
-  declarations: [AppComponent, CepDirective, PhoneDirective, EmailDirective, NameDirective],
+  declarations: [AppComponent, CepDirective, PhoneDirective, EmailDirective, NameDirective, PasswordDirective],
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent],

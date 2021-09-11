@@ -28,4 +28,12 @@
     </h2>
     <input [name]="{name: true, errColor: 'red'}" type="email" placeholder="E-mail" />
   </section>
+
+  <!-- Input Password -->
+  <section class="input-wrapper">
+    <h2 class="input-description">
+      Exemplo de validação de senhas
+    </h2>
+    <input [password]="{pattern: '^[0-9]+$', errColor: 'red'}" type="password" placeholder="Senha" />
+  </section>
 </form>
