@@ -2,18 +2,18 @@
   <!-- Input CEP -->
   <section class="input-wrapper">
     <h2 class="input-description">Exemplo para CEP 99999-999</h2>
-    <mat-form-field class="form-field" appearance="outline">
-      <mat-label>CEP</mat-label>
-      <input cep matInput placeholder="cep" />
-    </mat-form-field>
+    <input cep type="text" placeholder="cep" />
   </section>
 
   <!-- Input Phone -->
   <section class="input-wrapper">
     <h2 class="input-description">Exemplo para Phone (99) 9999-9999 / (99) 99999-9999</h2>
-    <mat-form-field class="form-field" appearance="outline">
-      <mat-label>Phone</mat-label>
-      <input phone matInput placeholder="Phone" />
-    </mat-form-field>
+    <input phone type="text" placeholder="Phone" />
+  </section>
+
+  <!-- Input Email -->
+  <section class="input-wrapper">
+    <h2 class="input-description">Exemplo de validação para Email *****@****.***</h2>
+    <input [email]="{errColor: 'red'}" type="email" placeholder="E-mail" />
   </section>
 </form>

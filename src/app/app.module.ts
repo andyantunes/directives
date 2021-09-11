@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CepDirective } from './directives/cep/cep.directive';
-import { PhoneDirective } from './directives/phone/phone.directive';
+
+import { CepDirective } from './directives/cep';
+import { PhoneDirective } from './directives/phone';
+import { EmailDirective } from './directives/email';
 
 @NgModule({
-  declarations: [AppComponent, CepDirective, PhoneDirective],
+  declarations: [AppComponent, CepDirective, PhoneDirective, EmailDirective],
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent],
