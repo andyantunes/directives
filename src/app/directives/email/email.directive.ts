@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
+import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 import { EmailOptions } from './email.model';
 
 const DEFAULT_OPTIONS: EmailOptions = {
@@ -19,7 +19,7 @@ export class EmailDirective {
     /^[a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1}([a-zA-Z0-9][\-_\.\+\!\#\$\%\&\'\*\/\=\?\^\`\{\|]{0,1})*[a-zA-Z0-9]@[a-zA-Z0-9][-\.]{0,1}([a-zA-Z][-\.]{0,1})*[a-zA-Z0-9]\.[a-zA-Z0-9]{1,}([\.\-]{0,1}[a-zA-Z]){0,}[a-zA-Z0-9]{0,}$/i
   );
 
-  constructor(private el: ElementRef) {}
+  constructor() {}
 
   public ngOnInit(): void {
     this.options = Object.assign({}, DEFAULT_OPTIONS, this.options);
@@ -28,6 +28,7 @@ export class EmailDirective {
 
   @HostListener('blur', ['$event']) public onBlur($event: any): void {
     $event.stopPropagation();
+
     const el = $event.target;
     const value = el.value;
 

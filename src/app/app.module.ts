@@ -11,9 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 import { CepDirective } from './directives/cep';
 import { PhoneDirective } from './directives/phone';
 import { EmailDirective } from './directives/email';
+import { NameDirective } from './directives/name/name.directive';
 
 @NgModule({
-  declarations: [AppComponent, CepDirective, PhoneDirective, EmailDirective],
+  declarations: [AppComponent, CepDirective, PhoneDirective, EmailDirective, NameDirective],
   imports: [BrowserModule, FormsModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule],
   providers: [],
   bootstrap: [AppComponent],

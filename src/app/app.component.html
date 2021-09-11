@@ -1,13 +1,17 @@
 <form class="form" action="">
   <!-- Input CEP -->
   <section class="input-wrapper">
-    <h2 class="input-description">Exemplo para CEP 99999-999</h2>
+    <h2 class="input-description">
+      Exemplo para CEP 99999-999
+    </h2>
     <input cep type="text" placeholder="cep" />
   </section>
 
   <!-- Input Phone -->
   <section class="input-wrapper">
-    <h2 class="input-description">Exemplo para Phone (99) 9999-9999 / (99) 99999-9999</h2>
+    <h2 class="input-description">
+      Exemplo para Phone (99) 9999-9999 / (99) 99999-9999
+    </h2>
     <input phone type="text" placeholder="Phone" />
   </section>
 
@@ -15,5 +19,13 @@
   <section class="input-wrapper">
     <h2 class="input-description">Exemplo de validação para Email *****@****.***</h2>
     <input [email]="{errColor: 'red'}" type="email" placeholder="E-mail" />
+  </section>
+
+  <!-- Input Name -->
+  <section class="input-wrapper">
+    <h2 class="input-description">
+      Exemplo de validação para Nome Primeiro_Nome / Primeiro_Nome Último_Nome
+    </h2>
+    <input [name]="{name: true, errColor: 'red'}" type="email" placeholder="E-mail" />
   </section>
 </form>
