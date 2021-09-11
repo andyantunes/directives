@@ -5,18 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-
-import { CepDirective } from './directives/cep';
-import { PhoneDirective } from './directives/phone';
-import { EmailDirective } from './directives/email';
-import { NameDirective } from './directives/name/name.directive';
-import { PasswordDirective } from './directives/password/password.directive';
+import { DirectivesModule } from './directives';
 
 @NgModule({
-  declarations: [AppComponent, CepDirective, PhoneDirective, EmailDirective, NameDirective, PasswordDirective],
-  imports: [BrowserModule, FormsModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, BrowserAnimationsModule, DirectivesModule],
   providers: [],
   bootstrap: [AppComponent],
 })
